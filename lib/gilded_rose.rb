@@ -7,8 +7,13 @@ class GildedRose
     @quality = quality
   end
 
+  def normal_tick
+    @quality -= 1
+    @days_remaining -= 1
+  end
+
   def tick
-    if name == 'normal'
+    if name == 'Normal Item'
       return normal_tick
     end
 
