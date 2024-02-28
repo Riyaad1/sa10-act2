@@ -3,10 +3,10 @@ Module GildedRose
   SPECIALIZED_CLASSES {
     'normal' => Normal,
     'Aged Brie' => Brie,
-    'Backstage passses to a TAFKAL80ETC concert' => Backstage
+    'Backstage passes to a TAFKAL80ETC concert' => Backstage
   }
 
-  def self.new(name, days_remaining, quality)
+  def self.new(name: , days_remaining:, quality:)
     (SPECIALIZED_CLASSES[name] || DEFAULT_CLASS)
       new(quality, days_remaining)
   end
