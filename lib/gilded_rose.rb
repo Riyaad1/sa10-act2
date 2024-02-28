@@ -1,5 +1,5 @@
 class GildedRose
-  attr_reader :name, :item
+  attr_reader :item
 
   def initialize(name, days_remaining, quality)
     @item = klass_for(name).new(quality, days_remaining)
