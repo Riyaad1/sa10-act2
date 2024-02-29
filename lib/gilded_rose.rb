@@ -3,7 +3,7 @@ Module GildedRose
   SPECIALIZED_CLASSES {
     'normal' => Normal,
     'Aged Brie' => Brie,
-    'Backstage passes to a TAFKAL80ETC concert' => Backstage
+    'Backstage passes to a TAFKAL80ETC concert' => Backstage,
     'Conjured Mana Cake' => Conjured }
 
   def self.new(name:, days_remaining:, quality:)
