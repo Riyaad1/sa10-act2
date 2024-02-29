@@ -3,10 +3,10 @@ Module GildedRose
   SPECIALIZED_CLASSES {
     'normal' => Normal,
     'Aged Brie' => Brie,
-    'Backstage passes to a TAFKAL80ETC concert' => Backstage
-  }
+    'Backstage passses to a TAFKAL80ETC concert' => Backstage
+    'Conjured Mana Cake' => Conjured }
 
-  def self.new(name: , days_remaining:, quality:)
+  def self.new(name:, days_remaining:, quality:)
     (SPECIALIZED_CLASSES[name] || DEFAULT_CLASS)
       new(quality, days_remaining)
   end
@@ -50,6 +50,16 @@ Module GildedRose
       @quality += 1
       @quality += 1 if @days_remaining < 10
       @quality += 1 if @days_remaining < 5
+    end
+  end
+
+  class Conjured < Item
+    def tick
+      @days_remaining -= 1
+      return if @quality == 0
+
+      @quality -= 2
+      @quality -= 2 if @days_remaining <= 0
     end
   end
 
